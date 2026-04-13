@@ -30,7 +30,6 @@ body{
   min-height:100vh;
 }
 
-/* Header */
 .header{
   padding:3rem 1.5rem 2rem;
   text-align:center;
@@ -47,7 +46,6 @@ body{
   font-size:0.9rem;
 }
 
-/* Grid */
 .projects{
   max-width:900px;
   margin:2rem auto;
@@ -57,7 +55,6 @@ body{
   gap:1px;
 }
 
-/* Card */
 .card{
   background:var(--surface);
   border:1px solid var(--border);
@@ -133,15 +130,7 @@ body{
   align-items:center;
   gap:0.3rem;
 }
-.card-meta a{
-  color:var(--accent);
-  text-decoration:none;
-}
-.card-meta a:hover{
-  text-decoration:underline;
-}
 
-/* Graph stats */
 .graph-stats{
   margin-top:1rem;
   padding:0.75rem 1rem;
@@ -159,7 +148,6 @@ body{
   font-weight:500;
 }
 
-/* Section divider */
 .section-label{
   font-size:0.75rem;
   font-weight:600;
@@ -169,27 +157,64 @@ body{
   padding:2rem 0 0.75rem;
 }
 
-/* Links row */
 .card-links{
   display:flex;
   gap:0.75rem;
   margin-top:1rem;
   flex-wrap:wrap;
 }
-.card-links a{
+.card-links a, .card-links button{
   font-size:0.8rem;
+  font-family:var(--font);
   color:var(--accent);
   text-decoration:none;
   padding:0.3rem 0.7rem;
   border:1px solid var(--accent-dim);
   border-radius:4px;
+  background:transparent;
+  cursor:pointer;
   transition:background 0.2s;
 }
-.card-links a:hover{
+.card-links a:hover, .card-links button:hover{
   background:var(--accent-dim);
 }
 
-/* Footer */
+/* Graph embed */
+.graph-embed{
+  margin-top:1rem;
+  border:1px solid var(--border);
+  border-radius:6px;
+  overflow:hidden;
+  display:none;
+}
+.graph-embed.open{
+  display:block;
+}
+.graph-embed-toolbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0.5rem 0.75rem;
+  background:var(--bg);
+  border-bottom:1px solid var(--border);
+  font-size:0.75rem;
+  color:var(--text-muted);
+}
+.graph-embed-toolbar a{
+  color:var(--accent);
+  text-decoration:none;
+  font-size:0.75rem;
+}
+.graph-embed-toolbar a:hover{
+  text-decoration:underline;
+}
+.graph-embed iframe{
+  width:100%;
+  height:500px;
+  border:none;
+  background:var(--bg);
+}
+
 .footer{
   text-align:center;
   padding:3rem 1.5rem;
@@ -205,6 +230,7 @@ body{
   .card{padding:1.25rem}
   .card-head{flex-direction:column;align-items:flex-start}
   .graph-stats{flex-direction:column;gap:0.5rem}
+  .graph-embed iframe{height:350px}
 }
 </style>
 </head>
@@ -248,7 +274,14 @@ body{
       <span>79x Token-Reduktion</span>
     </div>
     <div class="card-links">
-      <a href="graphs/imperium.html" target="_blank" rel="noopener">Knowledge Graph</a>
+      <button onclick="toggleGraph('graph-imperium')">Knowledge Graph anzeigen</button>
+    </div>
+    <div class="graph-embed" id="graph-imperium">
+      <div class="graph-embed-toolbar">
+        <span>Interaktiver Knowledge Graph &mdash; Nodes anklicken, zoomen, suchen</span>
+        <a href="graphs/imperium.html" target="_blank" rel="noopener">Vollbild</a>
+      </div>
+      <iframe src="about:blank" data-src="graphs/imperium.html" title="Imperium Knowledge Graph"></iframe>
     </div>
   </div>
 
@@ -264,10 +297,10 @@ body{
     </div>
     <div class="card-desc">
       Legion Simulator mit Grand Strategy Endgame. Du landest als Centurion mit 80 Legionaren
-      an der Kuste Britanniens — jeder Soldat hat einen Namen, Erfahrung und Geschichte.
+      an der Kuste Britanniens &mdash; jeder Soldat hat einen Namen, Erfahrung und Geschichte.
       Nahtloser Zoom von Einzelsoldaten bis zur Ubersichtskarte. NASA SRTM Heightmap,
       MultiMesh GPU-Instancing, 5 LOD-Stufen. Inspiriert von Songs of Syx, Imperator Rome
-      und Mount & Blade.
+      und Mount &amp; Blade.
     </div>
     <div class="card-meta">
       <span>Nepos Games</span>
@@ -282,7 +315,14 @@ body{
       <span>3.923x Token-Reduktion</span>
     </div>
     <div class="card-links">
-      <a href="graphs/britannia.html" target="_blank" rel="noopener">Knowledge Graph</a>
+      <button onclick="toggleGraph('graph-britannia')">Knowledge Graph anzeigen</button>
+    </div>
+    <div class="graph-embed" id="graph-britannia">
+      <div class="graph-embed-toolbar">
+        <span>Interaktiver Knowledge Graph &mdash; Nodes anklicken, zoomen, suchen</span>
+        <a href="graphs/britannia.html" target="_blank" rel="noopener">Vollbild</a>
+      </div>
+      <iframe src="about:blank" data-src="graphs/britannia.html" title="Warlord Britannia Knowledge Graph"></iframe>
     </div>
   </div>
 
@@ -326,7 +366,7 @@ body{
       Klinische Entscheidungshilfen fur Gynakologie und Geburtshilfe. Sammlung spezialisierter
       Tools: BirthScan (Geburtsplanung und -uberwachung), ChemoScan (Chemotherapie-Protokolle),
       DopplerScan (Doppler-Sonographie Auswertung), PostpartumScan (Postpartale Versorgung),
-      GynOnko (Gynakologische Onkologie). Gleiche Architektur wie IntensivTools — Single-File,
+      GynOnko (Gynakologische Onkologie). Gleiche Architektur wie IntensivTools &mdash; Single-File,
       offline-fahig, kein Datenspeicher.
     </div>
     <div class="card-meta">
@@ -344,6 +384,21 @@ body{
 <div class="footer">
   Gebaut mit Graphify Knowledge Graphs &middot; 2026
 </div>
+
+<script>
+function toggleGraph(id) {
+  var el = document.getElementById(id);
+  var isOpen = el.classList.toggle('open');
+  if (isOpen) {
+    var iframe = el.querySelector('iframe');
+    if (iframe.src === 'about:blank') {
+      iframe.src = iframe.dataset.src;
+    }
+  }
+  var btn = el.previousElementSibling.querySelector('button');
+  btn.textContent = isOpen ? 'Knowledge Graph verbergen' : 'Knowledge Graph anzeigen';
+}
+</script>
 
 </body>
 </html>
