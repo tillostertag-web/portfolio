@@ -374,8 +374,22 @@ body{
       <span>Leitlinien-konform</span>
       <span>Mobile-first</span>
     </div>
+    <div class="graph-stats">
+      <span><span class="label">Graphify:</span> 112 Nodes</span>
+      <span>158 Edges</span>
+      <span>14 Communities</span>
+      <span>Tool-Vernetzung</span>
+    </div>
     <div class="card-links">
       <a href="https://gyn-tools.pages.dev/" target="_blank" rel="noopener">Live-Version</a>
+      <button onclick="toggleGraph('graph-gyntools')">Knowledge Graph anzeigen</button>
+    </div>
+    <div class="graph-embed" id="graph-gyntools">
+      <div class="graph-embed-toolbar">
+        <span>Wie die 5 Tools klinisch ineinander greifen</span>
+        <a href="graphs/gyntools.html" target="_blank" rel="noopener">Vollbild</a>
+      </div>
+      <iframe src="about:blank" data-src="graphs/gyntools.html" title="GynTools Knowledge Graph"></iframe>
     </div>
   </div>
 
