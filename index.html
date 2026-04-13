@@ -115,7 +115,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
   <div class="section-label">Games &mdash; Nepos Games</div>
 
   <!-- IMPERIUM -->
-  <div class="card fade-in">
+  <div class="card fade-in" data-project="imperium">
     <div class="card-head">
       <span class="card-title">Imperium</span>
       <div class="card-badges">
@@ -135,15 +135,15 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
       <span>11 Fraktionen</span>
       <span>50+ Stadte</span>
       <span>4096&times;4096 Karte</span>
-      <span>2 Commits</span>
+      <span data-stat="commits">2 Commits</span>
     </div>
     <div class="card-activity">
-      Letzter Commit: <span class="commit-msg">Road-System mit C++ 4-Cone Generator und Crossing-Elimination</span>
+      Letzter Commit: <span class="commit-msg" data-stat="last-commit">feat: rewrite road system with C++ 4-cone generator and crossing elimination</span>
     </div>
     <div class="graph-stats">
-      <span><span class="label">Graphify:</span> 851 Nodes</span>
-      <span>1.353 Edges</span>
-      <span>80 Communities</span>
+      <span data-stat="nodes"><span class="label">Graphify:</span> 851 Nodes</span>
+      <span data-stat="edges">1.353 Edges</span>
+      <span data-stat="communities">80 Communities</span>
       <span>79&times; Token-Reduktion</span>
     </div>
     <div class="card-links">
@@ -178,7 +178,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
   </div>
 
   <!-- WARLORD BRITANNIA -->
-  <div class="card fade-in">
+  <div class="card fade-in" data-project="britannia">
     <div class="card-head">
       <span class="card-title">Warlord: Britannia</span>
       <div class="card-badges">
@@ -201,12 +201,12 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
       <span>Romische Legion-Hierarchie</span>
     </div>
     <div class="card-activity">
-      Letzter Commit: <span class="commit-msg">Terrain-Rendering mit Fractal Noise und Hillshade</span>
+      Letzter Commit: <span class="commit-msg" data-stat="last-commit">feat: initial commit - Warlord Britannia</span>
     </div>
     <div class="graph-stats">
-      <span><span class="label">Graphify:</span> 455 Nodes</span>
-      <span>698 Edges</span>
-      <span>44 Communities</span>
+      <span data-stat="nodes"><span class="label">Graphify:</span> 455 Nodes</span>
+      <span data-stat="edges">698 Edges</span>
+      <span data-stat="communities">44 Communities</span>
       <span>3.923&times; Token-Reduktion</span>
     </div>
     <div class="card-links">
@@ -242,7 +242,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
   <div class="section-label">Medizinische Tools &amp; Lehre</div>
 
   <!-- GYNTEACH -->
-  <div class="card fade-in">
+  <div class="card fade-in" data-project="gynteach">
     <div class="card-head">
       <span class="card-title">GynTeach</span>
       <div class="card-badges">
@@ -263,8 +263,15 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
       <span>CTG-Simulator</span>
       <span>Leitlinien 2024&ndash;2026</span>
     </div>
+    <div class="graph-stats">
+      <span data-stat="nodes"><span class="label">Graphify:</span> 52 Nodes</span>
+      <span data-stat="edges">62 Edges</span>
+      <span data-stat="communities">7 Communities</span>
+      <span>Lehr-Module</span>
+    </div>
     <div class="card-links">
       <a href="https://gynteach.pages.dev/" target="_blank" rel="noopener">Live-Version</a>
+      <button onclick="toggleGraph('graph-gynteach')">Knowledge Graph</button>
       <button onclick="toggleDetails('details-gynteach')">Details</button>
     </div>
     <div class="card-details" id="details-gynteach">
@@ -279,10 +286,17 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
                    <span class="dd">5. CTG-Simulator (30 Szenarien, FIGO 2015, Dawes-Redman STV, Quiz-Modus)</span>
 <span class="dt">Design:</span>        <span class="dd">DM Sans + Playfair Display, Dark Theme, Gold-Accent #c9a96e</span>
     </div>
+    <div class="graph-embed" id="graph-gynteach">
+      <div class="graph-embed-toolbar">
+        <span>Lehr-Module und klinische Algorithmen</span>
+        <a href="graphs/gynteach.html" target="_blank" rel="noopener">Vollbild</a>
+      </div>
+      <iframe src="about:blank" data-src="graphs/gynteach.html" title="GynTeach Knowledge Graph"></iframe>
+    </div>
   </div>
 
   <!-- INTENSIVTOOLS -->
-  <div class="card fade-in">
+  <div class="card fade-in" data-project="intensivtools">
     <div class="card-head">
       <span class="card-title">IntensivTools</span>
       <div class="card-badges">
@@ -303,10 +317,17 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
       <span>Kein Datenschutzproblem</span>
     </div>
     <div class="card-activity">
-      Letzter Commit: <span class="commit-msg">Interaktiver ECMO-Manager (VV + VA)</span>
+      Letzter Commit: <span class="commit-msg" data-stat="last-commit">fix: Horizontaler Scroll in score-body und card-body</span>
+    </div>
+    <div class="graph-stats">
+      <span data-stat="nodes"><span class="label">Graphify:</span> 80 Nodes</span>
+      <span data-stat="edges">110 Edges</span>
+      <span data-stat="communities">11 Communities</span>
+      <span>ICU-Module</span>
     </div>
     <div class="card-links">
       <a href="https://intensivtools.pages.dev/" target="_blank" rel="noopener">Live-Version</a>
+      <button onclick="toggleGraph('graph-intensivtools')">Knowledge Graph</button>
       <button onclick="toggleDetails('details-intensivtools')">Details</button>
     </div>
     <div class="card-details" id="details-intensivtools">
@@ -325,10 +346,17 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 <span class="dt">Design:</span>        <span class="dd">--accent: #1a5fa8 (ICU-Blau), Ampel-System (gruen/gelb/orange/rot)</span>
 <span class="dt">Deploy:</span>        <span class="dd">npx wrangler pages deploy . --project-name intensivtools</span>
     </div>
+    <div class="graph-embed" id="graph-intensivtools">
+      <div class="graph-embed-toolbar">
+        <span>ICU-Module und klinische Scores</span>
+        <a href="graphs/intensivtools.html" target="_blank" rel="noopener">Vollbild</a>
+      </div>
+      <iframe src="about:blank" data-src="graphs/intensivtools.html" title="IntensivTools Knowledge Graph"></iframe>
+    </div>
   </div>
 
   <!-- GYNTOOLS -->
-  <div class="card fade-in">
+  <div class="card fade-in" data-project="gyntools">
     <div class="card-head">
       <span class="card-title">GynTools</span>
       <div class="card-badges">
@@ -349,9 +377,9 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
       <span>Mobile-first</span>
     </div>
     <div class="graph-stats">
-      <span><span class="label">Graphify:</span> 112 Nodes</span>
-      <span>158 Edges</span>
-      <span>14 Communities</span>
+      <span data-stat="nodes"><span class="label">Graphify:</span> 112 Nodes</span>
+      <span data-stat="edges">158 Edges</span>
+      <span data-stat="communities">14 Communities</span>
       <span>Tool-Vernetzung</span>
     </div>
     <div class="card-links">
