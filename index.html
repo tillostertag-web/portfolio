@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Till Ostertag — Projekte</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0f;
+  --surface:#12121a;
+  --surface-hover:#1a1a26;
+  --border:#1e1e2e;
+  --text:#e2e2e8;
+  --text-muted:#6b6b80;
+  --accent:#4a7dff;
+  --accent-dim:#2a4a99;
+  --green:#2dd4a0;
+  --orange:#f59e0b;
+  --red:#ef4444;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif;
+  --mono:"SF Mono",Consolas,"Liberation Mono",monospace;
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  min-height:100vh;
+}
+
+/* Header */
+.header{
+  padding:3rem 1.5rem 2rem;
+  text-align:center;
+  border-bottom:1px solid var(--border);
+}
+.header h1{
+  font-size:1.5rem;
+  font-weight:600;
+  letter-spacing:0.02em;
+  margin-bottom:0.25rem;
+}
+.header p{
+  color:var(--text-muted);
+  font-size:0.9rem;
+}
+
+/* Grid */
+.projects{
+  max-width:900px;
+  margin:2rem auto;
+  padding:0 1.5rem;
+  display:flex;
+  flex-direction:column;
+  gap:1px;
+}
+
+/* Card */
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:1.5rem;
+  margin-bottom:1rem;
+  transition:border-color 0.2s;
+}
+.card:hover{
+  border-color:var(--accent-dim);
+}
+.card-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  margin-bottom:0.75rem;
+  flex-wrap:wrap;
+}
+.card-title{
+  font-size:1.15rem;
+  font-weight:600;
+}
+.card-badges{
+  display:flex;
+  gap:0.5rem;
+  flex-wrap:wrap;
+}
+.badge{
+  font-size:0.7rem;
+  font-weight:500;
+  padding:0.2rem 0.55rem;
+  border-radius:4px;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+  white-space:nowrap;
+}
+.badge-lang{
+  background:var(--accent-dim);
+  color:var(--accent);
+}
+.badge-status-active{
+  background:#1a3a2a;
+  color:var(--green);
+}
+.badge-status-dev{
+  background:#2a2a1a;
+  color:var(--orange);
+}
+.badge-status-live{
+  background:#1a2a3a;
+  color:#60a5fa;
+}
+.badge-engine{
+  background:#2a1a2a;
+  color:#c084fc;
+}
+.card-desc{
+  color:var(--text-muted);
+  font-size:0.9rem;
+  margin-bottom:1rem;
+  line-height:1.5;
+}
+.card-meta{
+  display:flex;
+  gap:1.5rem;
+  flex-wrap:wrap;
+  font-size:0.8rem;
+  color:var(--text-muted);
+}
+.card-meta span{
+  display:flex;
+  align-items:center;
+  gap:0.3rem;
+}
+.card-meta a{
+  color:var(--accent);
+  text-decoration:none;
+}
+.card-meta a:hover{
+  text-decoration:underline;
+}
+
+/* Graph stats */
+.graph-stats{
+  margin-top:1rem;
+  padding:0.75rem 1rem;
+  background:var(--bg);
+  border-radius:6px;
+  font-size:0.8rem;
+  font-family:var(--mono);
+  color:var(--text-muted);
+  display:flex;
+  gap:1.5rem;
+  flex-wrap:wrap;
+}
+.graph-stats .label{
+  color:var(--text);
+  font-weight:500;
+}
+
+/* Section divider */
+.section-label{
+  font-size:0.75rem;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+  color:var(--text-muted);
+  padding:2rem 0 0.75rem;
+}
+
+/* Links row */
+.card-links{
+  display:flex;
+  gap:0.75rem;
+  margin-top:1rem;
+  flex-wrap:wrap;
+}
+.card-links a{
+  font-size:0.8rem;
+  color:var(--accent);
+  text-decoration:none;
+  padding:0.3rem 0.7rem;
+  border:1px solid var(--accent-dim);
+  border-radius:4px;
+  transition:background 0.2s;
+}
+.card-links a:hover{
+  background:var(--accent-dim);
+}
+
+/* Footer */
+.footer{
+  text-align:center;
+  padding:3rem 1.5rem;
+  font-size:0.75rem;
+  color:var(--text-muted);
+  border-top:1px solid var(--border);
+  margin-top:2rem;
+}
+
+@media(max-width:600px){
+  .header{padding:2rem 1rem 1.5rem}
+  .projects{padding:0 1rem}
+  .card{padding:1.25rem}
+  .card-head{flex-direction:column;align-items:flex-start}
+  .graph-stats{flex-direction:column;gap:0.5rem}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Till Ostertag</h1>
+  <p>Game Development &middot; Medical Tools &middot; Open Source</p>
+</div>
+
+<div class="projects">
+
+  <div class="section-label">Games</div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="card-title">Imperium</span>
+      <div class="card-badges">
+        <span class="badge badge-lang">C++20</span>
+        <span class="badge badge-lang">OpenGL</span>
+        <span class="badge badge-lang">SDL2</span>
+        <span class="badge badge-status-active">In Entwicklung</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      Echtzeit-Strategiespiel im antiken Mittelmeerraum, 240 v.Chr. Prozedurale Terrain-Generierung
+      mit Fractal Noise, historische Stadte und Fraktionen, A*-basierte Strassengenerierung mit
+      Crossing-Elimination und Corridor-Merging. ECS-Architektur mit EnTT fur Simulation von
+      Wirtschaft, Handel, Kultur und Diplomatie.
+    </div>
+    <div class="card-meta">
+      <span>11 Fraktionen</span>
+      <span>50+ Stadte</span>
+      <span>4096x4096 Karte</span>
+    </div>
+    <div class="graph-stats">
+      <span><span class="label">Graphify:</span> 851 Nodes</span>
+      <span>1.353 Edges</span>
+      <span>80 Communities</span>
+      <span>79x Token-Reduktion</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="card-title">Warlord: Britannia</span>
+      <div class="card-badges">
+        <span class="badge badge-engine">Godot 4.6</span>
+        <span class="badge badge-lang">GDScript</span>
+        <span class="badge badge-lang">C++</span>
+        <span class="badge badge-status-dev">Prototyp</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      Legion Simulator mit Grand Strategy Endgame. Du landest als Centurion mit 80 Legionaren
+      an der Kuste Britanniens — jeder Soldat hat einen Namen, Erfahrung und Geschichte.
+      Nahtloser Zoom von Einzelsoldaten bis zur Ubersichtskarte. NASA SRTM Heightmap,
+      MultiMesh GPU-Instancing, 5 LOD-Stufen. Inspiriert von Songs of Syx, Imperator Rome
+      und Mount & Blade.
+    </div>
+    <div class="card-meta">
+      <span>25 Stamme</span>
+      <span>5 LOD-Stufen</span>
+      <span>Romische Legion-Hierarchie</span>
+    </div>
+    <div class="graph-stats">
+      <span><span class="label">Graphify:</span> 455 Nodes</span>
+      <span>698 Edges</span>
+      <span>44 Communities</span>
+      <span>3.923x Token-Reduktion</span>
+    </div>
+  </div>
+
+  <div class="section-label">Medizinische Tools</div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="card-title">IntensivTools</span>
+      <div class="card-badges">
+        <span class="badge badge-lang">HTML</span>
+        <span class="badge badge-lang">Vanilla JS</span>
+        <span class="badge badge-status-live">Live</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      Klinisches Entscheidungsunterstutzungs-Tool fur die internistische Intensivstation.
+      Single-File HTML ohne Dependencies. Sepsis (SSC 2021), ARDS (ARDSNet/Berlin),
+      AKI (KDIGO 2012), kardiovaskulare Notfalle (ESC 2023), Gerinnung/DIC (ISTH 2023),
+      Stoffwechsel (ADA/AWMF). Mobile-first, offline-fahig, kein Datenspeicher.
+    </div>
+    <div class="card-meta">
+      <span>6 klinische Module</span>
+      <span>Leitlinien-konform</span>
+      <span>Kein Datenschutzproblem</span>
+    </div>
+    <div class="card-links">
+      <a href="https://tillostertag-web.github.io/intensivtools/" target="_blank" rel="noopener">Live-Version</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="card-title">GynTools</span>
+      <div class="card-badges">
+        <span class="badge badge-lang">HTML</span>
+        <span class="badge badge-lang">Vanilla JS</span>
+        <span class="badge badge-status-live">Live</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      Klinische Entscheidungshilfen fur Gynakologie und Geburtshilfe. Sammlung spezialisierter
+      Tools: BirthScan (Geburtsplanung und -uberwachung), ChemoScan (Chemotherapie-Protokolle),
+      DopplerScan (Doppler-Sonographie Auswertung), PostpartumScan (Postpartale Versorgung),
+      GynOnko (Gynakologische Onkologie). Gleiche Architektur wie IntensivTools — Single-File,
+      offline-fahig, kein Datenspeicher.
+    </div>
+    <div class="card-meta">
+      <span>5 spezialisierte Tools</span>
+      <span>Leitlinien-konform</span>
+      <span>Mobile-first</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Gebaut mit Graphify Knowledge Graphs &middot; 2026
+</div>
+
+</body>
+</html>
