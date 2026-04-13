@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Till Ostertag — Projekte</title>
-<meta name="description" content="Game Development, klinische Entscheidungstools und Open Source von Till Ostertag. Imperium, Warlord Britannia, IntensivTools, GynTools.">
-<meta property="og:title" content="Till Ostertag — Projekte">
-<meta property="og:description" content="Game Development, klinische Entscheidungstools und Open Source.">
+<title>Projektuebersicht</title>
+<meta name="description" content="Projektuebersicht: Games, klinische Tools, Open Source.">
+<meta property="og:title" content="Projektuebersicht">
+<meta property="og:description" content="Games, klinische Tools, Open Source.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://portfolio-7wc.pages.dev">
-<meta name="twitter:card" content="summary">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -26,243 +25,75 @@
   --mono:"SF Mono",Consolas,"Liberation Mono",monospace;
 }
 html{font-size:16px;scroll-behavior:smooth}
-body{
-  font-family:var(--font);
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
-  min-height:100vh;
-}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
 
-.header{
-  padding:3rem 1.5rem 2rem;
-  text-align:center;
-  border-bottom:1px solid var(--border);
-}
-.header h1{
-  font-size:1.5rem;
-  font-weight:600;
-  letter-spacing:0.02em;
-  margin-bottom:0.25rem;
-}
-.header p{
-  color:var(--text-muted);
-  font-size:0.9rem;
-  margin-bottom:1rem;
-}
-.header-links{
-  display:flex;
-  gap:1rem;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-.header-links a{
-  color:var(--accent);
-  text-decoration:none;
-  font-size:0.8rem;
-  padding:0.25rem 0.6rem;
-  border:1px solid var(--accent-dim);
-  border-radius:4px;
-  transition:background 0.2s;
-}
-.header-links a:hover{
-  background:var(--accent-dim);
-}
+.header{padding:3rem 1.5rem 2rem;text-align:center;border-bottom:1px solid var(--border)}
+.header h1{font-size:1.5rem;font-weight:600;letter-spacing:0.02em;margin-bottom:0.5rem}
+.header-links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.header-links a{color:var(--accent);text-decoration:none;font-size:0.8rem;padding:0.25rem 0.6rem;border:1px solid var(--accent-dim);border-radius:4px;transition:background 0.2s}
+.header-links a:hover{background:var(--accent-dim)}
 
-.about{
-  max-width:900px;
-  margin:2rem auto 0;
-  padding:0 1.5rem;
-}
-.about-card{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:1.25rem 1.5rem;
-  font-size:0.88rem;
-  color:var(--text-muted);
-  line-height:1.6;
-}
-.about-card strong{
-  color:var(--text);
-}
+.projects{max-width:900px;margin:1.5rem auto 2rem;padding:0 1.5rem;display:flex;flex-direction:column}
 
-.projects{
-  max-width:900px;
-  margin:1.5rem auto 2rem;
-  padding:0 1.5rem;
-  display:flex;
-  flex-direction:column;
-}
-
-.card{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:1.5rem;
-  margin-bottom:1rem;
-  transition:border-color 0.2s, opacity 0.6s, transform 0.6s;
-}
-.card:hover{
-  border-color:var(--accent-dim);
-}
-.card.fade-in{
-  opacity:0;
-  transform:translateY(12px);
-}
-.card.visible{
-  opacity:1;
-  transform:translateY(0);
-}
-.card-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:1rem;
-  margin-bottom:0.75rem;
-  flex-wrap:wrap;
-}
-.card-title{
-  font-size:1.15rem;
-  font-weight:600;
-}
-.card-badges{
-  display:flex;
-  gap:0.5rem;
-  flex-wrap:wrap;
-}
-.badge{
-  font-size:0.7rem;
-  font-weight:500;
-  padding:0.2rem 0.55rem;
-  border-radius:4px;
-  text-transform:uppercase;
-  letter-spacing:0.04em;
-  white-space:nowrap;
-}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1rem;transition:border-color 0.2s,opacity 0.6s,transform 0.6s}
+.card:hover{border-color:var(--accent-dim)}
+.card.fade-in{opacity:0;transform:translateY(12px)}
+.card.visible{opacity:1;transform:translateY(0)}
+.card-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:0.75rem;flex-wrap:wrap}
+.card-title{font-size:1.15rem;font-weight:600}
+.card-badges{display:flex;gap:0.5rem;flex-wrap:wrap}
+.badge{font-size:0.7rem;font-weight:500;padding:0.2rem 0.55rem;border-radius:4px;text-transform:uppercase;letter-spacing:0.04em;white-space:nowrap}
 .badge-lang{background:var(--accent-dim);color:var(--accent)}
 .badge-status-active{background:#1a3a2a;color:var(--green)}
 .badge-status-dev{background:#2a2a1a;color:var(--orange)}
 .badge-status-live{background:#1a2a3a;color:#60a5fa}
 .badge-engine{background:#2a1a2a;color:#c084fc}
+.card-desc{color:var(--text-muted);font-size:0.9rem;margin-bottom:1rem;line-height:1.5}
+.card-meta{display:flex;gap:1.5rem;flex-wrap:wrap;font-size:0.8rem;color:var(--text-muted)}
+.card-activity{margin-top:0.75rem;font-size:0.78rem;color:var(--text-muted);font-family:var(--mono)}
+.card-activity .commit-msg{color:var(--text)}
 
-.card-desc{
-  color:var(--text-muted);
-  font-size:0.9rem;
-  margin-bottom:1rem;
-  line-height:1.5;
-}
-.card-meta{
-  display:flex;
-  gap:1.5rem;
-  flex-wrap:wrap;
-  font-size:0.8rem;
-  color:var(--text-muted);
-}
+.graph-stats{margin-top:1rem;padding:0.75rem 1rem;background:var(--bg);border-radius:6px;font-size:0.8rem;font-family:var(--mono);color:var(--text-muted);display:flex;gap:1.5rem;flex-wrap:wrap}
+.graph-stats .label{color:var(--text);font-weight:500}
 
-.card-activity{
-  margin-top:0.75rem;
-  font-size:0.78rem;
-  color:var(--text-muted);
-  font-family:var(--mono);
-}
-.card-activity .commit-msg{
-  color:var(--text);
-}
+.section-label{font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);padding:2rem 0 0.75rem}
 
-.graph-stats{
-  margin-top:1rem;
-  padding:0.75rem 1rem;
-  background:var(--bg);
-  border-radius:6px;
-  font-size:0.8rem;
-  font-family:var(--mono);
-  color:var(--text-muted);
-  display:flex;
-  gap:1.5rem;
-  flex-wrap:wrap;
-}
-.graph-stats .label{
-  color:var(--text);
-  font-weight:500;
-}
+.card-links{display:flex;gap:0.75rem;margin-top:1rem;flex-wrap:wrap}
+.card-links a,.card-links button{font-size:0.8rem;font-family:var(--font);color:var(--accent);text-decoration:none;padding:0.3rem 0.7rem;border:1px solid var(--accent-dim);border-radius:4px;background:transparent;cursor:pointer;transition:background 0.2s}
+.card-links a:hover,.card-links button:hover{background:var(--accent-dim)}
 
-.section-label{
-  font-size:0.75rem;
-  font-weight:600;
-  text-transform:uppercase;
-  letter-spacing:0.1em;
-  color:var(--text-muted);
-  padding:2rem 0 0.75rem;
-}
-
-.card-links{
-  display:flex;
-  gap:0.75rem;
-  margin-top:1rem;
-  flex-wrap:wrap;
-}
-.card-links a,.card-links button{
-  font-size:0.8rem;
-  font-family:var(--font);
-  color:var(--accent);
-  text-decoration:none;
-  padding:0.3rem 0.7rem;
-  border:1px solid var(--accent-dim);
-  border-radius:4px;
-  background:transparent;
-  cursor:pointer;
-  transition:background 0.2s;
-}
-.card-links a:hover,.card-links button:hover{
-  background:var(--accent-dim);
-}
-
-.graph-embed{
-  margin-top:1rem;
-  border:1px solid var(--border);
-  border-radius:6px;
-  overflow:hidden;
+/* Details panel */
+.card-details{
   display:none;
-}
-.graph-embed.open{display:block}
-.graph-embed-toolbar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0.5rem 0.75rem;
+  margin-top:1rem;
+  padding:1rem;
   background:var(--bg);
-  border-bottom:1px solid var(--border);
-  font-size:0.75rem;
+  border-radius:6px;
+  font-size:0.8rem;
+  font-family:var(--mono);
   color:var(--text-muted);
+  line-height:1.7;
+  white-space:pre-wrap;
+  word-break:break-all;
 }
-.graph-embed-toolbar a{
-  color:var(--accent);
-  text-decoration:none;
-  font-size:0.75rem;
-}
-.graph-embed-toolbar a:hover{text-decoration:underline}
-.graph-embed iframe{
-  width:100%;
-  height:500px;
-  border:none;
-  background:var(--bg);
-}
+.card-details.open{display:block}
+.card-details .dt{color:var(--text);font-weight:500;display:inline}
+.card-details .dd{color:var(--text-muted);display:inline}
 
-.footer{
-  text-align:center;
-  padding:3rem 1.5rem;
-  font-size:0.75rem;
-  color:var(--text-muted);
-  border-top:1px solid var(--border);
-  margin-top:2rem;
-}
+.graph-embed{margin-top:1rem;border:1px solid var(--border);border-radius:6px;overflow:hidden;display:none}
+.graph-embed.open{display:block}
+.graph-embed-toolbar{display:flex;align-items:center;justify-content:space-between;padding:0.5rem 0.75rem;background:var(--bg);border-bottom:1px solid var(--border);font-size:0.75rem;color:var(--text-muted)}
+.graph-embed-toolbar a{color:var(--accent);text-decoration:none;font-size:0.75rem}
+.graph-embed-toolbar a:hover{text-decoration:underline}
+.graph-embed iframe{width:100%;height:500px;border:none;background:var(--bg)}
+
+.footer{text-align:center;padding:3rem 1.5rem;font-size:0.75rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
 .footer a{color:var(--accent);text-decoration:none}
 .footer a:hover{text-decoration:underline}
 
 @media(max-width:600px){
   .header{padding:2rem 1rem 1.5rem}
-  .projects,.about{padding:0 1rem}
+  .projects{padding:0 1rem}
   .card{padding:1.25rem}
   .card-head{flex-direction:column;align-items:flex-start}
   .graph-stats{flex-direction:column;gap:0.5rem}
@@ -283,6 +114,7 @@ body{
 
   <div class="section-label">Games &mdash; Nepos Games</div>
 
+  <!-- IMPERIUM -->
   <div class="card fade-in">
     <div class="card-head">
       <span class="card-title">Imperium</span>
@@ -315,7 +147,26 @@ body{
       <span>79&times; Token-Reduktion</span>
     </div>
     <div class="card-links">
-      <button onclick="toggleGraph('graph-imperium')">Knowledge Graph anzeigen</button>
+      <button onclick="toggleGraph('graph-imperium')">Knowledge Graph</button>
+      <button onclick="toggleDetails('details-imperium')">Details</button>
+    </div>
+    <div class="card-details" id="details-imperium">
+<span class="dt">Pfad:</span>          <span class="dd">C:\Users\Till\Projects\imperium</span>
+<span class="dt">GitHub:</span>        <span class="dd">— (lokal)</span>
+<span class="dt">Build:</span>         <span class="dd">cmake -B build -G "Visual Studio 18 2026" -DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems/vcpkg.cmake</span>
+                   <span class="dd">cmake --build build --config Release --parallel</span>
+<span class="dt">Run:</span>           <span class="dd">.\build\Release\imperium.exe</span>
+<span class="dt">Architektur:</span>   <span class="dd">src/core/ (Engine, Window, Input)</span>
+                   <span class="dd">src/game/ (City, Road, Simulation, TerrainQuery)</span>
+                   <span class="dd">src/render/ (Camera, CityRenderer, RoadRenderer, MapRenderer, Shader)</span>
+                   <span class="dd">src/game/systems/ (Production, Trade, Taxation, Culture, Unrest, Building, Character)</span>
+                   <span class="dd">tools/ (Python: bake_heightmap, bake_coastline, generate_cities, generate_roads)</span>
+<span class="dt">Dependencies:</span>  <span class="dd">SDL2 (vcpkg), GLM 1.0.1, EnTT 3.14.0, nlohmann_json 3.11.3, stb_image, GLAD</span>
+<span class="dt">Koordinaten:</span>   <span class="dd">game_x = (lon + 12) / 57 * 4096, game_y = (lat - 24) / 34 * 4096</span>
+                   <span class="dd">Kartengrenzen: lon [-12, 45], lat [24, 58]</span>
+<span class="dt">Graphify:</span>      <span class="dd">graphify-out/graph.json (851 Nodes, 1.353 Edges, 80 Communities)</span>
+                   <span class="dd">graphify-out/GRAPH_REPORT.md — God Nodes, Surprising Connections</span>
+<span class="dt">Fokus:</span>         <span class="dd">Road-Generation System (4-Cone directional search, A*-Pathfinding, Crossing-Elimination, Corridor-Merging)</span>
     </div>
     <div class="graph-embed" id="graph-imperium">
       <div class="graph-embed-toolbar">
@@ -326,6 +177,7 @@ body{
     </div>
   </div>
 
+  <!-- WARLORD BRITANNIA -->
   <div class="card fade-in">
     <div class="card-head">
       <span class="card-title">Warlord: Britannia</span>
@@ -358,7 +210,25 @@ body{
       <span>3.923&times; Token-Reduktion</span>
     </div>
     <div class="card-links">
-      <button onclick="toggleGraph('graph-britannia')">Knowledge Graph anzeigen</button>
+      <button onclick="toggleGraph('graph-britannia')">Knowledge Graph</button>
+      <button onclick="toggleDetails('details-britannia')">Details</button>
+    </div>
+    <div class="card-details" id="details-britannia">
+<span class="dt">Pfad:</span>          <span class="dd">C:\Users\Till\Documents\WarlordBritannia</span>
+<span class="dt">GitHub:</span>        <span class="dd">— (lokal)</span>
+<span class="dt">Engine:</span>        <span class="dd">Godot 4.6.1 (GDScript + C++ GDExtension)</span>
+<span class="dt">Architektur:</span>   <span class="dd">godot/ (Godot-Projekt: Szenen, Shader, Assets)</span>
+                   <span class="dd">godot/assets/terrain/ (Heightmap, Coastline, Ground Textures, Props, Trees)</span>
+                   <span class="dd">godot/assets/army/ (Soldier Sprites, Cohort/Legion Blocks, Standards)</span>
+                   <span class="dd">tools/ (Python: generate_terrain_textures, generate_army_sprites, generate_tree_sprites)</span>
+                   <span class="dd">assets/terrain/ (Source: heightmap_britannia.png, coastline_mask 4k/8k)</span>
+<span class="dt">GDD:</span>           <span class="dd">GAME_DESIGN_DOCUMENT.md — Vision, 3 Saeulen, 4 Karrierephasen, 25 Staemme</span>
+<span class="dt">Rendering:</span>     <span class="dd">NASA SRTM Heightmap + Fractal Noise + Pre-computed Hillshade</span>
+                   <span class="dd">5 LOD-Stufen: Strategic, Campaign, Tactical, Close, Battle</span>
+                   <span class="dd">MultiMeshInstance2D fur GPU-Instancing (100k+ Einheiten)</span>
+<span class="dt">Fraktionen:</span>    <span class="dd">Romer (Legionar, Centurion, Signifer, Auxiliary) vs Britonen (Champion)</span>
+<span class="dt">Graphify:</span>      <span class="dd">graphify-out/graph.json (455 Nodes, 698 Edges, 44 Communities)</span>
+<span class="dt">Fokus:</span>         <span class="dd">Terrain-Rendering, Sprite-Generierung, LOD-System</span>
     </div>
     <div class="graph-embed" id="graph-britannia">
       <div class="graph-embed-toolbar">
@@ -371,6 +241,7 @@ body{
 
   <div class="section-label">Medizinische Tools &amp; Lehre</div>
 
+  <!-- GYNTEACH -->
   <div class="card fade-in">
     <div class="card-head">
       <span class="card-title">GynTeach</span>
@@ -394,9 +265,23 @@ body{
     </div>
     <div class="card-links">
       <a href="https://gynteach.pages.dev/" target="_blank" rel="noopener">Live-Version</a>
+      <button onclick="toggleDetails('details-gynteach')">Details</button>
+    </div>
+    <div class="card-details" id="details-gynteach">
+<span class="dt">GitHub:</span>        <span class="dd">https://github.com/tillostertag-web/gynteach</span>
+<span class="dt">Cloudflare:</span>    <span class="dd">gynteach.pages.dev</span>
+<span class="dt">Dateien:</span>       <span class="dd">index.html (Lehrplattform, 5 Module), gynteach.html</span>
+<span class="dt">Architektur:</span>   <span class="dd">Single-File HTML, Vanilla JS, kein Build-Step</span>
+<span class="dt">Module:</span>        <span class="dd">1. Adnextumor (S3 Ovar v6.1, IOTA Simple Rules, ESGO 2025)</span>
+                   <span class="dd">2. PMB - Postmenopausale Blutung (S3 Endometrium v3.0, ESGO 2025)</span>
+                   <span class="dd">3. Zervixkarzinom-Screening (S3 Praevention, Ko-Test-Algorithmus)</span>
+                   <span class="dd">4. Schulterdystokie (HELPERR, DGGG 2024, RCOG Green-Top 42)</span>
+                   <span class="dd">5. CTG-Simulator (30 Szenarien, FIGO 2015, Dawes-Redman STV, Quiz-Modus)</span>
+<span class="dt">Design:</span>        <span class="dd">DM Sans + Playfair Display, Dark Theme, Gold-Accent #c9a96e</span>
     </div>
   </div>
 
+  <!-- INTENSIVTOOLS -->
   <div class="card fade-in">
     <div class="card-head">
       <span class="card-title">IntensivTools</span>
@@ -422,9 +307,27 @@ body{
     </div>
     <div class="card-links">
       <a href="https://intensivtools.pages.dev/" target="_blank" rel="noopener">Live-Version</a>
+      <button onclick="toggleDetails('details-intensivtools')">Details</button>
+    </div>
+    <div class="card-details" id="details-intensivtools">
+<span class="dt">Pfad:</span>          <span class="dd">C:\Users\Till\Projects\intensivtools</span>
+<span class="dt">GitHub:</span>        <span class="dd">https://github.com/tillostertag-web/intensivtools (public)</span>
+<span class="dt">Cloudflare:</span>    <span class="dd">intensivtools.pages.dev</span>
+<span class="dt">Dateien:</span>       <span class="dd">index.html (Single-File, ~283 KB), INTENSIV_SPEC.md</span>
+<span class="dt">Architektur:</span>   <span class="dd">Single-File HTML, Vanilla JS, kein Build-Step, kein CDN</span>
+                   <span class="dd">CSS-Variablen Design-Tokens, h() DOM-Helper, createStore/store State</span>
+<span class="dt">Module:</span>        <span class="dd">1. Sepsis (SSC 2021, qSOFA, SOFA, Sepsis-Bundle)</span>
+                   <span class="dd">2. ARDS (ARDSNet, Berlin-Definition, Beatmungseinstellung)</span>
+                   <span class="dd">3. AKI (KDIGO 2012, Staging, Dialyseindikation)</span>
+                   <span class="dd">4. Kardiovaskulaer (ESC 2023, Schockformen, Katecholamine)</span>
+                   <span class="dd">5. Gerinnung/DIC (ISTH 2023, ROTEM-Interpreter, Post-ROSC/TTM)</span>
+                   <span class="dd">6. Stoffwechsel (ADA/AWMF, BGA-Interpreter, ECMO-Manager VV+VA)</span>
+<span class="dt">Design:</span>        <span class="dd">--accent: #1a5fa8 (ICU-Blau), Ampel-System (gruen/gelb/orange/rot)</span>
+<span class="dt">Deploy:</span>        <span class="dd">npx wrangler pages deploy . --project-name intensivtools</span>
     </div>
   </div>
 
+  <!-- GYNTOOLS -->
   <div class="card fade-in">
     <div class="card-head">
       <span class="card-title">GynTools</span>
@@ -453,7 +356,28 @@ body{
     </div>
     <div class="card-links">
       <a href="https://gyn-tools.pages.dev/" target="_blank" rel="noopener">Live-Version</a>
-      <button onclick="toggleGraph('graph-gyntools')">Knowledge Graph anzeigen</button>
+      <button onclick="toggleGraph('graph-gyntools')">Knowledge Graph</button>
+      <button onclick="toggleDetails('details-gyntools')">Details</button>
+    </div>
+    <div class="card-details" id="details-gyntools">
+<span class="dt">Pfad:</span>          <span class="dd">C:\Users\Till\Desktop\GynToolRepo</span>
+<span class="dt">GitHub:</span>        <span class="dd">https://github.com/tillostertag-web/GynTool (private)</span>
+<span class="dt">Cloudflare:</span>    <span class="dd">gyn-tools.pages.dev</span>
+<span class="dt">Dateien:</span>       <span class="dd">index.html (Landing Page), BirthScan_v3.html, ChemoScan.html,</span>
+                   <span class="dd">DopplerScan.html, PostpartumScan.html, gynonko_v5.html</span>
+<span class="dt">Architektur:</span>   <span class="dd">Single-File HTML pro Tool, Vanilla JS, kein Build-Step</span>
+                   <span class="dd">Shared: CSS-Variablen, h() DOM-Helper, createStore/store, GynDesk Header</span>
+<span class="dt">Tools:</span>         <span class="dd">1. BirthScan — Geburtsplanung (Bishop Score, CTG, VBAC, Sectio-Risiko)</span>
+                   <span class="dd">2. ChemoScan — Chemotherapie (CTCAE v6, ECOG, KELIM, Carbo/Pac, BRCA)</span>
+                   <span class="dd">3. DopplerScan — Doppler-Sono (UA PI, MCA PI/PSV, CPR, FGR-Staging I-IV)</span>
+                   <span class="dd">4. PostpartumScan — Medikamentensicherheit (37 Medikamente, Embryotox)</span>
+                   <span class="dd">5. GynOnko — Gyn. Onkologie (OvaScan, EndoScan, EndoMetriose, Verlauf)</span>
+<span class="dt">Vernetzung:</span>    <span class="dd">CA-125 verbindet OvaScan mit ChemoScan (RMI -> KELIM)</span>
+                   <span class="dd">BRCA verbindet OvaScan mit ChemoScan (Screening -> PARP-Inhibitor)</span>
+                   <span class="dd">Doppler-Befunde -> BirthScan (FGR-Staging -> Entbindungszeitpunkt)</span>
+                   <span class="dd">Molekulare Klassifikation -> ChemoScan (EndoScan -> Immuntherapie)</span>
+<span class="dt">Graphify:</span>      <span class="dd">graphify-out/graph.json (112 Nodes, 158 Edges, 14 Communities)</span>
+<span class="dt">Deploy:</span>        <span class="dd">npx wrangler pages deploy . --project-name gyn-tools</span>
     </div>
     <div class="graph-embed" id="graph-gyntools">
       <div class="graph-embed-toolbar">
@@ -479,17 +403,19 @@ function toggleGraph(id){
     var iframe=el.querySelector('iframe');
     if(iframe.src==='about:blank')iframe.src=iframe.dataset.src;
   }
-  var btn=el.previousElementSibling.querySelector('button');
-  btn.textContent=isOpen?'Knowledge Graph verbergen':'Knowledge Graph anzeigen';
+  var btn=el.closest('.card').querySelector('button[onclick*="toggleGraph"]');
+  btn.textContent=isOpen?'Graph verbergen':'Knowledge Graph';
+}
+function toggleDetails(id){
+  var el=document.getElementById(id);
+  var isOpen=el.classList.toggle('open');
+  var btn=el.closest('.card').querySelector('button[onclick*="toggleDetails"]');
+  btn.textContent=isOpen?'Details verbergen':'Details';
 }
 
-// Scroll animations
 var observer=new IntersectionObserver(function(entries){
   entries.forEach(function(e){
-    if(e.isIntersecting){
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
-    }
+    if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}
   });
 },{threshold:0.1});
 document.querySelectorAll('.fade-in').forEach(function(el){observer.observe(el)});
