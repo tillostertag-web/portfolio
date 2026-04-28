@@ -10,11 +10,13 @@ cd "$PORTFOLIO_DIR"
 echo "[portfolio] Copying Graphify graphs..."
 mkdir -p graphs
 for entry in \
+  "/c/Users/Till/Projects/AquilaUnity/graphify-out/graph.html:aquila" \
   "/c/Users/Till/Projects/imperium/graphify-out/graph.html:imperium" \
   "/c/Users/Till/Documents/WarlordBritannia/graphify-out/graph.html:britannia" \
   "/c/Users/Till/Desktop/GynToolRepo/graphify-out/graph.html:gyntools" \
   "/c/Users/Till/Projects/intensivtools/graphify-out/graph.html:intensivtools" \
-  "/c/Users/Till/gynteach/graphify-out/graph.html:gynteach"; do
+  "/c/Users/Till/gynteach/graphify-out/graph.html:gynteach" \
+  "/c/Users/Till/Projects/postbellum/graphify-out/graph.html:postbellum"; do
   src="${entry%%:*}"
   name="${entry##*:}"
   if [ -f "$src" ]; then
@@ -29,11 +31,13 @@ import json, subprocess, os, re
 from pathlib import Path
 
 projects = [
+    {'id': 'aquila',        'path': 'C:/Users/Till/Projects/AquilaUnity',      'graph': 'C:/Users/Till/Projects/AquilaUnity/graphify-out/graph.json'},
     {'id': 'imperium',      'path': 'C:/Users/Till/Projects/imperium',         'graph': 'C:/Users/Till/Projects/imperium/graphify-out/graph.json'},
     {'id': 'britannia',     'path': 'C:/Users/Till/Documents/WarlordBritannia','graph': 'C:/Users/Till/Documents/WarlordBritannia/graphify-out/graph.json'},
     {'id': 'gynteach',      'path': 'C:/Users/Till/gynteach',                  'graph': 'C:/Users/Till/gynteach/graphify-out/graph.json'},
     {'id': 'intensivtools', 'path': 'C:/Users/Till/Projects/intensivtools',    'graph': 'C:/Users/Till/Projects/intensivtools/graphify-out/graph.json'},
     {'id': 'gyntools',      'path': 'C:/Users/Till/Desktop/GynToolRepo',       'graph': 'C:/Users/Till/Desktop/GynToolRepo/graphify-out/graph.json'},
+    {'id': 'postbellum',    'path': 'C:/Users/Till/Projects/postbellum',       'graph': 'C:/Users/Till/Projects/postbellum/graphify-out/graph.json'},
 ]
 
 stats = {}

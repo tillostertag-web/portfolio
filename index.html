@@ -47,6 +47,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 .badge-status-active{background:#1a3a2a;color:var(--green)}
 .badge-status-dev{background:#2a2a1a;color:var(--orange)}
 .badge-status-live{background:#1a2a3a;color:#60a5fa}
+.badge-status-paused{background:#2a2433;color:#b9b2c9}
 .badge-engine{background:#2a1a2a;color:#c084fc}
 .card-desc{color:var(--text-muted);font-size:0.9rem;margin-bottom:1rem;line-height:1.5}
 .card-meta{display:flex;gap:1.5rem;flex-wrap:wrap;font-size:0.8rem;color:var(--text-muted)}
@@ -112,7 +113,72 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 
 <div class="projects">
 
-  <div class="section-label">Games &mdash; Nepos Games</div>
+  <div class="section-label">Aktuelles Spiel &mdash; Nepos Games</div>
+
+  <!-- AQUILA -->
+  <div class="card fade-in" data-project="aquila">
+    <div class="card-head">
+      <span class="card-title">Aquila</span>
+      <div class="card-badges">
+        <span class="badge badge-engine">Unity 6</span>
+        <span class="badge badge-lang">C#</span>
+        <span class="badge badge-lang">Python Tools</span>
+        <span class="badge badge-status-active">Aktiv</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      Aktives Kampagnenprojekt im westlichen Mittelmeerraum. Top-down Unity-6-Prototyp mit
+      historischer Lon/Lat-Karte, klickbaren Settlement-Markern, URP-Rendering und gestreamter
+      Tile-Pyramide aus einer separaten 16K-Map-Pipeline. Visuell orientiert an Carthage /
+      Bellum-Punicum: warme Reliefkarte, gedampfte Farben, strategische Uebersicht statt Arcadigkeit.
+    </div>
+    <div class="card-meta">
+      <span>Westliches Mittelmeer</span>
+      <span>8 Prototype-Settlements</span>
+      <span>z0-z5 Tile-Streaming</span>
+      <span data-stat="commits">2 Commits</span>
+    </div>
+    <div class="card-activity">
+      Letzter Commit: <span class="commit-msg" data-stat="last-commit">docs: add Graphify baseline for AquilaUnity</span>
+    </div>
+    <div class="graph-stats">
+      <span data-stat="nodes"><span class="label">Graphify:</span> 91 Nodes</span>
+      <span data-stat="edges">113 Edges</span>
+      <span data-stat="communities">11 Communities</span>
+      <span><span class="label">Engine:</span> Unity 6.3 LTS + URP</span>
+    </div>
+    <div class="card-links">
+      <button onclick="toggleGraph('graph-aquila')">Knowledge Graph</button>
+      <button onclick="toggleDetails('details-aquila')">Details</button>
+    </div>
+    <div class="card-details" id="details-aquila">
+<span class="dt">Unity-Pfad:</span>    <span class="dd">C:\Users\Till\Projects\AquilaUnity</span>
+<span class="dt">Map-Pipeline:</span>  <span class="dd">C:\Users\Till\Projects\aquila-westmed</span>
+<span class="dt">GitHub (Unity):</span><span class="dd">https://github.com/tillostertag-web/AquilaUnity (private)</span>
+<span class="dt">GitHub (Map):</span>  <span class="dd">https://github.com/tillostertag-web/aquila</span>
+<span class="dt">Engine:</span>        <span class="dd">Unity 6.3 LTS (Universal 2D / URP, Top-Down Campaign Prototype)</span>
+<span class="dt">Sprachen:</span>      <span class="dd">C# fuer Kamera, HUD, Marker, Tile-Loader</span>
+                   <span class="dd">Python fuer Terrain-Bake, Relief, Forest-Sprites, Review-Tools</span>
+<span class="dt">Rendering:</span>     <span class="dd">URP Sprite-Lit-Map, Global Light 2D, StreamingAssets Tile-Pyramide</span>
+                   <span class="dd">Zoom-Stufen z0-z5 aus 16K Master, 4096 Fallback-Map unter den Tiles</span>
+<span class="dt">Map-Daten:</span>     <span class="dd">Westliches Mittelmeer, 16.384x12.288 Master, 32x24 Tiles auf z5</span>
+                   <span class="dd">8 Prototype-Settlements mit Lon/Lat -> World Mapping und klickbarer HUD-Selektion</span>
+<span class="dt">Architektur:</span>   <span class="dd">Assets/Aquila/Scripts/ (CampaignCameraController, CampaignHud, SettlementLoader, TilePyramidLoader)</span>
+                   <span class="dd">Assets/StreamingAssets/Aquila/tiles/ (synced runtime tiles + manifest)</span>
+                   <span class="dd">tools/ in aquila-westmed (Bake, Forest-Sprites, Review-Snapshots, Unity tile sync)</span>
+<span class="dt">Graphify:</span>      <span class="dd">AquilaUnity/graphify-out/graph.html + graph.json (Portfolio-Embed + GitHub-Doku)</span>
+<span class="dt">Fokus:</span>         <span class="dd">Kampagnenkarten-Prototyp, historische Kartenlesbarkeit, Unity-Integration, Tile-Streaming</span>
+    </div>
+    <div class="graph-embed" id="graph-aquila">
+      <div class="graph-embed-toolbar">
+        <span>Interaktiver Knowledge Graph &mdash; Runtime, Tile-Streaming und Scene-Builder</span>
+        <a href="graphs/aquila.html" target="_blank" rel="noopener">Vollbild</a>
+      </div>
+      <iframe src="about:blank" data-src="graphs/aquila.html" title="Aquila Knowledge Graph"></iframe>
+    </div>
+  </div>
+
+  <div class="section-label">Fruehere / pausierte Games</div>
 
   <!-- IMPERIUM -->
   <div class="card fade-in" data-project="imperium">
@@ -122,7 +188,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
         <span class="badge badge-lang">C++20</span>
         <span class="badge badge-lang">OpenGL</span>
         <span class="badge badge-lang">SDL2</span>
-        <span class="badge badge-status-active">In Entwicklung</span>
+        <span class="badge badge-status-paused">Pausiert</span>
       </div>
     </div>
     <div class="card-desc">
@@ -236,6 +302,87 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
         <a href="graphs/britannia.html" target="_blank" rel="noopener">Vollbild</a>
       </div>
       <iframe src="about:blank" data-src="graphs/britannia.html" title="Warlord Britannia Knowledge Graph"></iframe>
+    </div>
+  </div>
+
+  <!-- POSTBELLUM -->
+  <div class="card fade-in" data-project="postbellum">
+    <div class="card-head">
+      <span class="card-title">PostBellum</span>
+      <div class="card-badges">
+        <span class="badge badge-engine">Godot 4.3</span>
+        <span class="badge badge-lang">GDScript</span>
+        <span class="badge badge-lang">C++17</span>
+        <span class="badge badge-status-dev">Phase 3</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      Historisches Echtzeit-Taktik-Spiel, Roemische Republik 146&ndash;133 v.Chr. &mdash;
+      Numantinischer Krieg, Erster Sklavenkrieg, Gracchische Reformen. Formations-Integritaet
+      ueber Individualkampf, Moral entscheidet Schlachten (nicht HP-Attrition), Messenger-Delay
+      fuer Befehle, deterministische Simulation mit Fog of War. Flanking-Zonen, Rout-Kaskaden,
+      Panik-Broadcast. Muted Earth Tones im HistoryMarche- / Bellum-Punicum-Stil.
+    </div>
+    <div class="card-meta">
+      <span>146&ndash;133 v.Chr.</span>
+      <span>Deterministische Sim</span>
+      <span>60 Hz Physics-Tick</span>
+      <span data-stat="commits">10 Commits</span>
+    </div>
+    <div class="card-activity">
+      Letzter Commit: <span class="commit-msg" data-stat="last-commit">feat(combat): Phase 2.3 + 2.4 â€” strength attrition + morale drain</span>
+    </div>
+    <div class="graph-stats">
+      <span data-stat="nodes"><span class="label">Graphify:</span> 453 Nodes</span>
+      <span data-stat="edges">455 Edges</span>
+      <span data-stat="communities">119 Communities</span>
+      <span>GDScript + Docs semantisch</span>
+    </div>
+    <div class="card-links">
+      <button onclick="toggleGraph('graph-postbellum')">Knowledge Graph</button>
+      <button onclick="toggleDetails('details-postbellum')">Details</button>
+    </div>
+    <div class="card-details" id="details-postbellum">
+<span class="dt">Pfad:</span>          <span class="dd">C:\Users\Till\Projects\postbellum</span>
+<span class="dt">GitHub:</span>        <span class="dd">&mdash; (lokal)</span>
+<span class="dt">Engine:</span>        <span class="dd">Godot 4.3+ (GL Compatibility Renderer, Top-Down-2D)</span>
+<span class="dt">Sprachen:</span>      <span class="dd">Typed GDScript (Phase 0&ndash;4) + C++17 via GDExtension (Phase 5+ Hotpath-Ports)</span>
+<span class="dt">Build (C++):</span>   <span class="dd">SCons + godot-cpp Submodule; tools/build.ps1 findet vcvars64 automatisch</span>
+<span class="dt">Architektur:</span>   <span class="dd">scripts/ (Sim: Units, Formation, Kampf, Moral, Messenger)</span>
+                   <span class="dd">shaders/ (GLSL, Terrain + Unit-Rendering)</span>
+                   <span class="dd">scenes/ (Battle, Camera, UI)</span>
+                   <span class="dd">src/ (C++ Build-Probe, Register-Types &mdash; Smoke-Test)</span>
+                   <span class="dd">tests/test_runner.tscn (Headless-Harness, 10 Tests, CI-integriert)</span>
+                   <span class="dd">tools/ (perf_probe, build.ps1)</span>
+<span class="dt">Phasen:</span>        <span class="dd">Phase 0 Setup &check;&nbsp; Phase 1 Sim-Kern (Formation/Bewegung) &check;</span>
+                   <span class="dd">Phase 2 Kampf + Moral &check; (Flanking, Rout, Panik-Kaskade)</span>
+                   <span class="dd">Phase 3 Command-Layer (Drag-Box, Messenger-Delay, Battle-State) &mdash; aktiv</span>
+                   <span class="dd">Phase 4 Rendering Polish &mdash; Terrain-Shader, Zoom-LOD, UI-Theme</span>
+                   <span class="dd">Phase 5 Profile &amp; C++-Port (datengetrieben)</span>
+                   <span class="dd">Phase 6+ Campaign (Provinzen, Senat, historische Charaktere)</span>
+<span class="dt">Design-Prinzipien:</span><span class="dd">1. Formations-Integritaet &gt; Individualkampf</span>
+                   <span class="dd">2. Moral entscheidet Schlachten, nicht HP-Attrition</span>
+                   <span class="dd">3. Spieler ist Legatus, kein Allwissender (Messenger-Delay, Fog of War)</span>
+                   <span class="dd">4. Historische Authentizitaet vor Gamey-Balance</span>
+                   <span class="dd">5. Muted Aesthetik (gedeckte Erdtoene, keine HP-Balken, keine Damage-Zahlen)</span>
+<span class="dt">Historisch:</span>    <span class="dd">Quellen: Polybios (Buch 6), Appian (Iberike), Plutarch (Tib. Gracchus),</span>
+                   <span class="dd">Diodor (Sklavenkrieg); Keaveney, Rosenstein, Goldsworthy, Matyszak</span>
+<span class="dt">Referenz:</span>      <span class="dd">Primaer: Carthage: Bellum Punicum (Square-Formation + Einzel-Soldat-Zoom)</span>
+                   <span class="dd">Sekundaer: HistoryMarche; Anti: Total War, Ultimate General</span>
+<span class="dt">Determinismus:</span> <span class="dd">Sim in _physics_process (60 Hz), Render in _process, Seeded RNG pro Schlacht</span>
+<span class="dt">Graphify:</span>      <span class="dd">graphify-out/graph.json (453 Nodes, 455 Edges, 119 Communities)</span>
+                   <span class="dd">godot-cpp + Asset-Bilder via .graphifyignore ausgeschlossen &mdash; nur eigener Code + Docs</span>
+                   <span class="dd">14 benannte Communities: Combat/Rout, Manipulare Legion, Messenger-Delay, DEM-Heightmap-Pipeline, Legatus-Prinzipien &hellip;</span>
+                   <span class="dd">GDScript via semantischer LLM-Extraktion (tree-sitter hat keinen .gd-Parser)</span>
+                   <span class="dd">graphify-out/GRAPH_REPORT.md &mdash; God Nodes, Community-Struktur</span>
+<span class="dt">Fokus:</span>         <span class="dd">Moral-System, Flanking-Zonen (FRONT/FLANK/REAR Multiplikatoren), Panik-Kaskaden</span>
+    </div>
+    <div class="graph-embed" id="graph-postbellum">
+      <div class="graph-embed-toolbar">
+        <span>Interaktiver Knowledge Graph &mdash; Sim, Rendering, GDExtension-Infrastruktur</span>
+        <a href="graphs/postbellum.html" target="_blank" rel="noopener">Vollbild</a>
+      </div>
+      <iframe src="about:blank" data-src="graphs/postbellum.html" title="PostBellum Knowledge Graph"></iframe>
     </div>
   </div>
 
