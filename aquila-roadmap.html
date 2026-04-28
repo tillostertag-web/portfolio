@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aquila Roadmap / To-do</title>
+<meta name="description" content="Aquila Roadmap und To-do-Planung">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0a0a0f;color:#e2e2e8;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif;line-height:1.7}
+.page{max-width:980px;margin:0 auto;padding:32px 20px 80px}
+.hero{margin-bottom:28px;padding:24px;border:1px solid #1e1e2e;border-radius:10px;background:#12121a}
+.hero h1{margin:0 0 10px;font-size:1.8rem}
+.hero p{margin:0 0 14px;color:#9a9ab0}
+.meta{display:flex;gap:14px;flex-wrap:wrap;font-size:.82rem;color:#8b8ba1}
+.meta a{color:#7ea3ff;text-decoration:none}
+.meta a:hover{text-decoration:underline}
+.nav{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 24px}
+.nav a{color:#7ea3ff;text-decoration:none;font-size:.82rem;padding:6px 10px;border:1px solid #2a4a99;border-radius:999px;background:#12121a}
+.nav a:hover{background:#1a2240}
+.content{padding:28px;border:1px solid #1e1e2e;border-radius:10px;background:#12121a}
+h1,h2,h3{line-height:1.25}
+h2{margin:32px 0 12px;font-size:1.28rem}
+h3{margin:24px 0 10px;font-size:1.02rem;color:#f1f1f5}
+p{margin:0 0 14px;color:#d7d7de}
+ul,ol{margin:0 0 16px 22px;padding:0}
+li{margin:0 0 8px}
+hr{border:none;border-top:1px solid #23233a;margin:26px 0}
+code{font-family:"SF Mono",Consolas,monospace;background:#0e1017;padding:2px 6px;border-radius:4px;color:#dfe7ff}
+pre{background:#0e1017;border:1px solid #1f2436;padding:14px;border-radius:8px;overflow:auto;margin:0 0 18px}
+pre code{background:none;padding:0}
+a{color:#7ea3ff}
+.checklist{list-style:none;margin-left:0}
+.checklist li{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border:1px solid #1f2436;border-radius:8px;background:#0e1017;margin-bottom:8px}
+.checklist li.done{border-color:#234a34;background:#101813}
+.check-icon{width:18px;flex:0 0 18px;color:#8fe3b1}
+.footer{margin-top:20px;font-size:.8rem;color:#8b8ba1}
+@media (max-width: 700px) {
+  .page{padding:20px 14px 60px}
+  .content{padding:20px}
+  .hero h1{font-size:1.45rem}
+}
+</style>
+</head>
+<body>
+  <div class="page">
+    <section class="hero">
+      <h1>Aquila Roadmap / To-do</h1>
+      <p>Automatisch aus der kanonischen Aquila-Roadmap erzeugt. Diese Seite ist die Website-Ansicht der langfristigen To-do-Planung.</p>
+      <div class="meta">
+        <span>Quelle: <code>C:\Users\Till\Projects\aquila-westmed\docs\TODO_AQUILA.md</code></span>
+        <span>Generiert: 2026-04-28 09:40</span>
+        <a href="https://github.com/tillostertag-web/aquila/blob/main/docs/TODO_AQUILA.md" target="_blank" rel="noopener">Auf GitHub ansehen</a>
+        <a href="index.html">Zurueck zum Portfolio</a>
+      </div>
+    </section>
+    <nav class="nav">
+      <a href="#pflege-regeln">Pflege-Regeln</a>
+<a href="#north-star">North Star</a>
+<a href="#aktueller-stand">Aktueller Stand</a>
+<a href="#milestone-0-foundation-lock-active">Milestone 0 - Foundation Lock [ACTIVE]</a>
+<a href="#milestone-1-u1-playable-map-interaction-next">Milestone 1 - U1 Playable Map Interaction [NEXT]</a>
+<a href="#milestone-2-u2-campaign-shell">Milestone 2 - U2 Campaign Shell</a>
+<a href="#decision-gate-a-was-ist-der-eigentliche-kampagnenloop">Decision Gate A - Was ist der eigentliche Kampagnenloop?</a>
+<a href="#milestone-3-u3-world-structure-settlements-provinces-roads">Milestone 3 - U3 World Structure (Settlements, Provinces, Roads)</a>
+<a href="#milestone-4-u4-movement-and-presence">Milestone 4 - U4 Movement and Presence</a>
+<a href="#milestone-5-u5-campaign-systems-ownership-economy-supply">Milestone 5 - U5 Campaign Systems (Ownership, Economy, Supply)</a>
+<a href="#milestone-6-u6-conflict-layer">Milestone 6 - U6 Conflict Layer</a>
+<a href="#milestone-7-u7-visual-cleanup-pass-2">Milestone 7 - U7 Visual Cleanup Pass 2</a>
+<a href="#decision-gate-b-bleibt-die-karte-2d-sprite-basiert-oder-wechseln-wir-spaeter-zu-mesh-shader">Decision Gate B - Bleibt die Karte 2D-Sprite-basiert oder wechseln wir spaeter zu Mesh/Shader?</a>
+<a href="#milestone-8-u8-content-expansion">Milestone 8 - U8 Content Expansion</a>
+<a href="#parallel-arbeitsmodell">Parallel-Arbeitsmodell</a>
+<a href="#update-trigger-fuer-diese-roadmap">Update-Trigger fuer diese Roadmap</a>
+<a href="#kurzfristige-reihenfolge-ab-jetzt">Kurzfristige Reihenfolge ab jetzt</a>
+    </nav>
+    <main class="content">
+      <h1 id="aquila-to-do-roadmap">Aquila To-Do / Roadmap</h1>
+<p>Dieses Dokument ist die <strong>kanonische Langfrist-Roadmap</strong> fuer <code>Aquila</code>.</p>
+<ul>
+<li><code>docs/PLAN.md</code> bleibt der <strong>kurzfristige aktive Arbeitsschritt</strong></li>
+<li><code>docs/AGENT_LOG.md</code> bleibt das <strong>operative Handoff-Protokoll</strong></li>
+<li><code>docs/TODO_AQUILA.md</code> ist die <strong>grosse Zukunftsplanung mit Phasen, Reihenfolge und offenen Entscheidungen</strong></li>
+</ul>
+<p>Wenn sich Zielbild, Reihenfolge oder Prioritaeten aendern, wird <strong>dieses Dokument zuerst</strong> aktualisiert. Danach folgen <code>PLAN.md</code>, <code>AGENT_LOG.md</code> und die Portfolio-Webseite.</p>
+<h2 id="pflege-regeln">Pflege-Regeln</h2>
+<ul class="checklist">
+<li class="open"><span class="check-icon">&#9633;</span><span>Bei jedem Wechsel des aktiven Milestones dieses Dokument aktualisieren</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Nach jeder groesseren Scope-Aenderung <code>docs/PLAN.md</code> mit diesem Dokument abgleichen</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Nach jeder inhaltlichen Aenderung an dieser Roadmap die Portfolio-Seite neu deployen</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Erledigte Punkte nicht loeschen, sondern abhaken oder in den Statusbereich verschieben</span></li>
+</ul>
+<h2 id="north-star">North Star</h2>
+<p>Aquila soll am Ende <strong>keine bloesse schoene Karte</strong>, sondern ein <strong>lesbares, historisch gestuetztes Kampagnenspiel</strong> sein:</p>
+<ul>
+<li>klare strategische Top-down-Lesbarkeit</li>
+<li>warme, painterly Mittelmeerkarte statt kuehler Digitaloptik</li>
+<li>klickbare Welt mit Staedten, Provinzen, Strassen, Armeen und Entscheidungen</li>
+<li>technische Basis in Unity/C#, waehrend die Python-Pipeline die Karten- und Tile-Quelle bleibt</li>
+</ul>
+<h2 id="aktueller-stand">Aktueller Stand</h2>
+<ul class="checklist">
+<li class="done"><span class="check-icon">&#10003;</span><span>Kampagnenkarten-Pipeline in <code>aquila-westmed</code> laeuft lokal reproduzierbar</span></li>
+<li class="done"><span class="check-icon">&#10003;</span><span>Visual Cleanup Pass 1 (A-E) abgeschlossen</span></li>
+<li class="done"><span class="check-icon">&#10003;</span><span>Unity-Prototyp U0 angelegt</span></li>
+<li class="done"><span class="check-icon">&#10003;</span><span>Tile-Streaming U0.2 eingebaut</span></li>
+<li class="done"><span class="check-icon">&#10003;</span><span>AquilaUnity-Graphify-Baseline + Portfolio-Graph stehen</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>U0.2 Playtest formell als stabil freigeben</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>U1 Settlement Interaction fertigstellen</span></li>
+</ul>
+<h2 id="milestone-0-foundation-lock-active">Milestone 0 - Foundation Lock [ACTIVE]</h2>
+<p><strong>Ziel:</strong> Die bestehende Karten- und Unity-Basis so stabil machen, dass darauf ohne Angst weitergebaut werden kann.</p>
+<ul class="checklist">
+<li class="open"><span class="check-icon">&#9633;</span><span>U0.2 Playtest einmal sauber mit Unity + MCP abnehmen</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>pruefen: Tile-Lader, Pan/Zoom, Marker-Klicks, Console sauber</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>dokumentieren: U0.2 in <code>AGENT_LOG.md</code> als <code>APPROVED</code></span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>kleiner Smoke-Test-Workflow definieren, der vor jedem groesseren Unity-Feature erneut gefahren wird</span></li>
+</ul>
+<p><strong>Definition of done</strong></p>
+<ul class="checklist">
+<li class="open"><span class="check-icon">&#9633;</span><span>keine Console-Errors im Basis-Playtest</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Tile-Pyramide laedt reproduzierbar</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Marker/HUD/Camera regressionsfrei</span></li>
+</ul>
+<h2 id="milestone-1-u1-playable-map-interaction-next">Milestone 1 - U1 Playable Map Interaction [NEXT]</h2>
+<p><strong>Ziel:</strong> Aus der Karte wird erstmals ein bedienbares Spielgeruest.</p>
+<ul class="checklist">
+<li class="open"><span class="check-icon">&#9633;</span><span>Settlement anklickbar und eindeutig selektierbar</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Hover- und Selection-State sauber trennen</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>HUD-Panel fuer <code>Name</code>, <code>Faction</code>, <code>Lon/Lat</code></span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Deselect durch Klick auf leere Karte</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Kamera kann auf selektiertes Settlement zentrieren</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Selection-UX so robust bauen, dass sie spaeter fuer Provinzen/Armeen wiederverwendbar ist</span></li>
+</ul>
+<p><strong>Definition of done</strong></p>
+<ul class="checklist">
+<li class="open"><span class="check-icon">&#9633;</span><span>ein Marker gleichzeitig selektierbar</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>HUD zeigt korrekte Daten</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Fokus auf Settlement funktioniert</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>keine Regressions an Tile-Loader und Map-View</span></li>
+</ul>
+<h2 id="milestone-2-u2-campaign-shell">Milestone 2 - U2 Campaign Shell</h2>
+<p><strong>Ziel:</strong> Erste echte Kampagnenoberflaeche statt nur Debug-HUD.</p>
+<ul class="checklist">
+<li class="open"><span class="check-icon">&#9633;</span><span>rechter Inspector statt reinem <code>OnGUI</code>-Kasten vorbereiten</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Layout fuer Top-Bar / Side-Panel / Bottom-Hints festlegen</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Platzhalter fuer Ressourcen, Runden-/Zeitstatus und Fraktionskontext</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>grundlegende Input-Hierarchie definieren: Karte, UI, Selection, Tool-Modi</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>visuelle Sprache fuer Buttons, Tabs, Info-Panels festlegen</span></li>
+</ul>
+<p><strong>Definition of done</strong></p>
+<ul class="checklist">
+<li class="open"><span class="check-icon">&#9633;</span><span>UI fuehlt sich wie eine Kampagnenoberflaeche an</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Debug-Box-Charakter deutlich reduziert</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Panel-Struktur ist fuer Provinzen, Armeen und Events erweiterbar</span></li>
+</ul>
+<h2 id="decision-gate-a-was-ist-der-eigentliche-kampagnenloop">Decision Gate A - Was ist der eigentliche Kampagnenloop?</h2>
+<p>Bevor wir tiefer in Systeme investieren, muessen wir das Spielformat absichern.</p>
+<ul class="checklist">
+<li class="open"><span class="check-icon">&#9633;</span><span>Entscheidung: rundenbasiert, pausable real-time oder Hybrid</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Entscheidung: Fokus auf Staat/Fraktion, auf Armee/Generaele oder beides</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Entscheidung: wie granular ist die Karte spielerisch? Settlements only, Provinzen, Regionen?</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Entscheidung: wie stark historisch vs. sandboxig?</span></li>
+</ul>
+<p><strong>Ohne diesen Gate riskieren wir, spaeter UI, Provinzen, Armeelogik und AI doppelt zu bauen.</strong></p>
+<h2 id="milestone-3-u3-world-structure-settlements-provinces-roads">Milestone 3 - U3 World Structure (Settlements, Provinces, Roads)</h2>
+<p><strong>Ziel:</strong> Die Karte bekommt spielbare Struktur.</p>
+<ul class="checklist">
+<li class="open"><span class="check-icon">&#9633;</span><span>Settlement-Datenmodell ausbauen: IDs, owner, level, tags, ggf. harbor/fort</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Provinz-/Regionenmodell definieren</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Road-Graph aus Python/Source-Daten oder manuell vorbereiten</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>visuelle Darstellung fuer Provinzgrenzen und Strassen</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Selection kann zwischen Settlement und Provinz unterscheiden</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Cost-Mask / Bewegungskosten in nutzbares Unity-Format ueberfuehren</span></li>
+</ul>
+<p><strong>Definition of done</strong></p>
+<ul class="checklist">
+<li class="open"><span class="check-icon">&#9633;</span><span>jedes Settlement gehoert zu einer Provinz/Region</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Strassen sind sichtbar und logisch nutzbar</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Karte fuehlt sich nicht mehr wie reine Bildflaeche an</span></li>
+</ul>
+<h2 id="milestone-4-u4-movement-and-presence">Milestone 4 - U4 Movement and Presence</h2>
+<p><strong>Ziel:</strong> Es gibt erstmals Dinge, die sich auf der Kampagnenkarte bewegen.</p>
+<ul class="checklist">
+<li class="open"><span class="check-icon">&#9633;</span><span>erstes Army-/Stack-Datenmodell</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Army-Marker / Banner / Counter definieren</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Bewegung entlang Strassen und ueber Freiraum regeln</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Reichweite, ETA oder Zugkosten im UI anzeigen</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>einfache Path-Preview beim Auswaehlen eines Ziels</span></li>
+</ul>
+<p><strong>Definition of done</strong></p>
+<ul class="checklist">
+<li class="open"><span class="check-icon">&#9633;</span><span>eine Fraktion kann mindestens eine Armee ueber die Karte bewegen</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Bewegung liest sich visuell klar</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Wegkosten und Ziel sind fuer den Spieler lesbar</span></li>
+</ul>
+<h2 id="milestone-5-u5-campaign-systems-ownership-economy-supply">Milestone 5 - U5 Campaign Systems (Ownership, Economy, Supply)</h2>
+<p><strong>Ziel:</strong> Die Karte bekommt strategische Konsequenzen.</p>
+<ul class="checklist">
+<li class="open"><span class="check-icon">&#9633;</span><span>Besitz/Owner-State fuer Settlements und Provinzen</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Einnahmen-/Versorgungsmodell minimal definieren</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Supply-Linien oder Versorgungseinfluss auf Bewegung/Armeen</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Hafen- und Kuestenlogik als Sonderfall vorbereiten</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>UI fuer Besitzwechsel und einfache Kampagnenwerte</span></li>
+</ul>
+<p><strong>Definition of done</strong></p>
+<ul class="checklist">
+<li class="open"><span class="check-icon">&#9633;</span><span>Karte reagiert spielmechanisch auf Besitz und Raum</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Armeen existieren nicht losgeloest von der Welt</span></li>
+</ul>
+<h2 id="milestone-6-u6-conflict-layer">Milestone 6 - U6 Conflict Layer</h2>
+<p><strong>Ziel:</strong> Der Schritt von der Strategie- zur Konfliktkarte wird glaubwuerdig.</p>
+<ul class="checklist">
+<li class="open"><span class="check-icon">&#9633;</span><span>Regeln fuer Begegnung / Blockade / Belagerung / Schlacht-Eintritt definieren</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>erster Kampagnen-Konfliktzustand zwischen zwei Fraktionen</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>UI fuer &quot;angreifen&quot;, &quot;belagern&quot;, &quot;abweichen&quot;, &quot;zurueckziehen&quot; vorbereiten</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>spaeterer Uebergang zu separatem Battle-Prototyp oder abstrahierter Kampfauswertung entscheiden</span></li>
+</ul>
+<p><strong>Definition of done</strong></p>
+<ul class="checklist">
+<li class="open"><span class="check-icon">&#9633;</span><span>der Spieler kann mehr tun als nur bewegen und anschauen</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Konflikte sind auf der Kampagnenkarte abbildbar</span></li>
+</ul>
+<h2 id="milestone-7-u7-visual-cleanup-pass-2">Milestone 7 - U7 Visual Cleanup Pass 2</h2>
+<p><strong>Ziel:</strong> Die Karte soll deutlich naeher an die Referenzbilder ruecken.</p>
+<ul class="checklist">
+<li class="open"><span class="check-icon">&#9633;</span><span>globale Waerme steigern (Hillshade / Warmth / Palette)</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Wald als Masse statt Punktkonfetti lesbar machen</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>ggf. <code>STYLE_FOREST_SPRITE_RENDER_SCALE</code> einfuehren</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Composition-Pruefung mit echten Campaign-Layern statt nur nackter Karte</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>entscheiden, ob Unity-Side Shader/Mesh-Prototyp noetig ist oder Python-Basis reicht</span></li>
+</ul>
+<p><strong>Definition of done</strong></p>
+<ul class="checklist">
+<li class="open"><span class="check-icon">&#9633;</span><span>Karte wirkt weniger digital-kuehl</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Referenzabstand ist sichtbar kleiner</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Spiel-Layer und Karte harmonieren zusammen</span></li>
+</ul>
+<h2 id="decision-gate-b-bleibt-die-karte-2d-sprite-basiert-oder-wechseln-wir-spaeter-zu-mesh-shader">Decision Gate B - Bleibt die Karte 2D-Sprite-basiert oder wechseln wir spaeter zu Mesh/Shader?</h2>
+<p>Das ist ein groesserer Architekturhebel und soll <strong>erst nach funktionierendem Kampagnenkern</strong> entschieden werden.</p>
+<ul class="checklist">
+<li class="open"><span class="check-icon">&#9633;</span><span>pruefen, ob Python-Map + Tile-Streaming fuer den Ziel-Look ausreicht</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>pruefen, ob Unity-Mesh/Heightmap/Shader echten Mehrwert bringt oder nur Komplexitaet</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Entscheidung dokumentieren, bevor ein groesserer Rendering-Umbau beginnt</span></li>
+</ul>
+<h2 id="milestone-8-u8-content-expansion">Milestone 8 - U8 Content Expansion</h2>
+<p><strong>Ziel:</strong> Aus dem Prototyp wird eine echte Kampagnenwelt.</p>
+<ul class="checklist">
+<li class="open"><span class="check-icon">&#9633;</span><span>mehr historische Settlements</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Fraktionsdaten und Startbesitz</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Provinz-Content / regionale Identitaet</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Events, Missions oder Startskripte</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Save/Load-Grundlage</span></li>
+</ul>
+<p><strong>Definition of done</strong></p>
+<ul class="checklist">
+<li class="open"><span class="check-icon">&#9633;</span><span>die Karte fuehlt sich nicht mehr wie Demo, sondern wie Kampagnenraum an</span></li>
+</ul>
+<h2 id="parallel-arbeitsmodell">Parallel-Arbeitsmodell</h2>
+<p><strong>Codex</strong></p>
+<ul>
+<li>plant die naechsten Milestones und Slices</li>
+<li>prueft Scope, Risiken und Reihenfolge</li>
+<li>reviewed Unity- und Python-Aenderungen</li>
+<li>haelt <code>PLAN</code>, <code>DECISIONS</code>, <code>CHANGELOG</code>, <code>AGENT_LOG</code> und Portfolio-Sync sauber</li>
+</ul>
+<p><strong>Claude Code</strong></p>
+<ul>
+<li>implementiert den freigegebenen Slice in Unity oder Python</li>
+<li>bleibt innerhalb der vereinbarten Dateien / Module</li>
+<li>dokumentiert kurz, was getan wurde und was offen bleibt</li>
+</ul>
+<p><strong>Till</strong></p>
+<ul>
+<li>gibt Zielrichtung, Referenzlook und Prioritaeten vor</li>
+<li>testet echte Bedienbarkeit im Editor</li>
+<li>entscheidet an den grossen Design-Gates</li>
+</ul>
+<h2 id="update-trigger-fuer-diese-roadmap">Update-Trigger fuer diese Roadmap</h2>
+<p>Roadmap aktualisieren, wenn mindestens einer dieser Punkte eintritt:</p>
+<ul class="checklist">
+<li class="open"><span class="check-icon">&#9633;</span><span>aktiver Milestone wechselt</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>ein Decision Gate wird entschieden</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Scope eines Milestones veraendert sich deutlich</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>ein geplanter Block wird gestrichen oder neu aufgenommen</span></li>
+<li class="open"><span class="check-icon">&#9633;</span><span>Website/Portfolio soll einen neuen Aquila-Status spiegeln</span></li>
+</ul>
+<h2 id="kurzfristige-reihenfolge-ab-jetzt">Kurzfristige Reihenfolge ab jetzt</h2>
+<ol>
+<li>U0.2 sauber freigeben</li>
+<li>U1 Settlement Interaction bauen</li>
+<li>Campaign Shell definieren</li>
+<li>Decision Gate A klaeren</li>
+<li>Provinzen/Strassen/Bewegung aufbauen</li>
+<li>erst dann tiefer in Kriegssysteme und grossen Visual Pass 2 investieren</li>
+</ol>
+    </main>
+    <div class="footer">
+      Diese Seite wird beim Portfolio-Update aus <code>docs/TODO_AQUILA.md</code> neu erzeugt.
+    </div>
+  </div>
+</body>
+</html>

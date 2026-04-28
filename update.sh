@@ -7,6 +7,13 @@ PORTFOLIO_DIR="$(cd "$(dirname "$0")" && pwd)"
 export PORTFOLIO_DIR_WIN="$(cygpath -w "$PORTFOLIO_DIR" 2>/dev/null || echo "$PORTFOLIO_DIR")"
 cd "$PORTFOLIO_DIR"
 
+echo "[portfolio] Rendering Aquila roadmap page..."
+python tools/render_aquila_todo.py \
+  --source "C:/Users/Till/Projects/aquila-westmed/docs/TODO_AQUILA.md" \
+  --output "aquila-roadmap.html" \
+  --title "Aquila Roadmap / To-do" \
+  --github-url "https://github.com/tillostertag-web/aquila/blob/main/docs/TODO_AQUILA.md"
+
 echo "[portfolio] Copying Graphify graphs..."
 mkdir -p graphs
 for entry in \

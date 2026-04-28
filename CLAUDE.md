@@ -17,6 +17,8 @@ https://portfolio-7wc.pages.dev
 ## Struktur
 - `index.html` - Hauptseite mit 7 Projekt-Karten (data-project Attribute fuer automatisches Update)
 - `update.sh` - Automatisierung: Graphs kopieren, Git/Graphify-Stats sammeln, in HTML injizieren, deployen
+- `aquila-roadmap.html` - generierte Website-Ansicht der kanonischen Aquila-Roadmap
+- `tools/render_aquila_todo.py` - rendert `C:\Users\Till\Projects\aquila-westmed\docs\TODO_AQUILA.md` zu `aquila-roadmap.html`
 - `graphs/` - Kopierte Graphify HTML-Visualisierungen (aquila, imperium, britannia, postbellum, gyntools, intensivtools, gynteach)
 
 ## Wie Stats aktualisiert werden
