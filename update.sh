@@ -9,10 +9,10 @@ cd "$PORTFOLIO_DIR"
 
 echo "[portfolio] Rendering Aquila roadmap page..."
 python tools/render_aquila_todo.py \
-  --source "C:/Users/Till/Projects/aquila-westmed/docs/TODO_AQUILA.md" \
+  --source "C:/Users/Till/Projects/AquilaUnity/docs/TODO_AQUILA.md" \
   --output "aquila-roadmap.html" \
   --title "Aquila Roadmap / To-do" \
-  --github-url "https://github.com/tillostertag-web/aquila/blob/main/docs/TODO_AQUILA.md"
+  --github-url "https://github.com/tillostertag-web/AquilaUnity/blob/main/docs/TODO_AQUILA.md"
 
 echo "[portfolio] Copying Graphify graphs..."
 mkdir -p graphs

@@ -18,7 +18,7 @@ https://portfolio-7wc.pages.dev
 - `index.html` - Hauptseite mit 7 Projekt-Karten (data-project Attribute fuer automatisches Update)
 - `update.sh` - Automatisierung: Graphs kopieren, Git/Graphify-Stats sammeln, in HTML injizieren, deployen
 - `aquila-roadmap.html` - generierte Website-Ansicht der kanonischen Aquila-Roadmap
-- `tools/render_aquila_todo.py` - rendert `C:\Users\Till\Projects\aquila-westmed\docs\TODO_AQUILA.md` zu `aquila-roadmap.html`
+- `tools/render_aquila_todo.py` - rendert `C:\Users\Till\Projects\AquilaUnity\docs\TODO_AQUILA.md` zu `aquila-roadmap.html`
 - `graphs/` - Kopierte Graphify HTML-Visualisierungen (aquila, imperium, britannia, postbellum, gyntools, intensivtools, gynteach)
 
 ## Wie Stats aktualisiert werden
@@ -30,7 +30,7 @@ https://portfolio-7wc.pages.dev
 ## Projekte (alle 8 inkl. Portfolio-Repo)
 | Projekt | Pfad |
 |---------|------|
-| Aquila | C:\Users\Till\Projects\AquilaUnity (aktive Unity-Game-Schiene) + C:\Users\Till\Projects\aquila-westmed (Map-/Bake-Pipeline) |
+| Aquila | C:\Users\Till\Projects\AquilaUnity (aktive Unity-Game-Schiene und Doku) + C:\Users\Till\Projects\aquila-westmed (Map-/Bake-Pipeline) |
 | Imperium | C:\Users\Till\Projects\imperium |
 | Warlord Britannia | C:\Users\Till\Documents\WarlordBritannia |
 | PostBellum | C:\Users\Till\Projects\postbellum |
